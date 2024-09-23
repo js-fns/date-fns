@@ -45,8 +45,8 @@ export type EachHourOfIntervalResult<
  * @example
  * // Each hour between 6 October 2014, 12:00 and 6 October 2014, 15:00
  * const result = eachHourOfInterval({
- *   start: new Date(2014, 9, 6, 12),
- *   end: new Date(2014, 9, 6, 15)
+ *   start: new Date(2014, 10, 6, 12),
+ *   end: new Date(2014, 10, 6, 15)
  * });
  * //=> [
  * //   Mon Oct 06 2014 12:00:00,
