@@ -181,6 +181,7 @@
     "./src/nextWednesday/index.ts",
     "./src/parse/index.ts",
     "./src/parseISO/index.ts",
+    "./src/parseISODuration/index.ts",
     "./src/parseJSON/index.ts",
     "./src/previousDay/index.ts",
     "./src/previousFriday/index.ts",
