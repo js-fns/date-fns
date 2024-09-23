@@ -4,6 +4,8 @@ Starting with v3.6.0, the CDN versions of date-fns are available on [jsDelivr](h
 
 Unlike the npm package, the CDN is transpiled to be compatible with IE11, so it supports a wide variety of legacy browsers and environments.
 
+[Click here](https://goonlinetools.com/realtime-html-editor/#rhsjje18yvs99s8f6eaiev) to run the code in your browser instantly. 
+
 ```html
 <script src="https://cdn.jsdelivr.net/npm/date-fns@3.6.0/cdn.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/date-fns@3.6.0/locale/es/cdn.min.js"></script>
