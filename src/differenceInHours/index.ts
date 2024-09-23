@@ -31,6 +31,19 @@ export interface DifferenceInHoursOptions
  *   new Date(2014, 6, 2, 6, 50)
  * )
  * //=> 12
+ *
+ * // Different rounding options can result in distinct outputs based on fractional hours in the result.
+ * const result = differenceInHours(
+ *   new Date(2014, 6, 2, 19, 0),
+ *   new Date(2014, 6, 2, 6, 50),
+ *   { roundingMethod: 'ceil' }
+ * )
+ * //=> 13
+ *
+ * // ceil — if there is a fractional piece of an hour in the result, the next highest hour value is used
+ * // floor — if there is a fractional piece of an hour in the result, the next lowest hour value is used
+ * // round — if there is a fractional piece of an hour in the result, the closest hour value is used
+ * // trunc — ignores the fractional element of the result and simply uses the hour value
  */
 export function differenceInHours(
   laterDate: DateArg<Date> & {},
