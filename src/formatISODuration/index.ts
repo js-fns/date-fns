@@ -22,7 +22,7 @@ import type { Duration } from "../types.js";
  *   minutes: 5,
  *   seconds: 0
  * })
- * //=> 'P39Y2M20DT0H0M0S'
+ * //=> 'P39Y2M20DT7H5M0S'
  */
 export function formatISODuration(duration: Duration): string {
   const {
