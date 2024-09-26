@@ -1850,6 +1850,16 @@
         "default": "./parseISO.js"
       }
     },
+    "./parseISODuration": {
+      "require": {
+        "types": "./parseISODuration.d.ts",
+        "default": "./parseISODuration.js"
+      },
+      "import": {
+        "types": "./parseISODuration.d.mts",
+        "default": "./parseISODuration.mjs"
+      }
+    },
     "./parseJSON": {
       "require": {
         "types": "./parseJSON.d.cts",
@@ -5318,6 +5328,16 @@
       "import": {
         "types": "./fp/parseISO.d.ts",
         "default": "./fp/parseISO.js"
+      }
+    },
+    "./fp/parseISODuration": {
+      "require": {
+        "types": "./fp/parseISODuration.d.ts",
+        "default": "./fp/parseISODuration.js"
+      },
+      "import": {
+        "types": "./fp/parseISODuration.d.mts",
+        "default": "./fp/parseISODuration.mjs"
       }
     },
     "./fp/parseISOWithOptions": {

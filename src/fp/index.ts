@@ -281,6 +281,7 @@ export * from "./nextWednesday/index.js";
 export * from "./nextWednesdayWithOptions/index.js";
 export * from "./parse/index.js";
 export * from "./parseISO/index.js";
+export * from "./parseISODuration/index.js";
 export * from "./parseISOWithOptions/index.js";
 export * from "./parseJSON/index.js";
 export * from "./parseJSONWithOptions/index.js";
