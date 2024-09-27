@@ -103,7 +103,7 @@ export function formatDuration(
       const token = `x${unit.replace(/(^.)/, (m) =>
         m.toUpperCase(),
       )}` as FormatDistanceToken;
-      const value = duration[unit];
+      const value = duration[unit] ?? (zero ? 0 : undefined);
       if (value !== undefined && (zero || duration[unit])) {
         return acc.concat(locale.formatDistance(token, value));
       }
