@@ -23,5 +23,7 @@ export function isBefore(
   date: DateArg<Date> & {},
   dateToCompare: DateArg<Date> & {},
 ): boolean {
-  return +toDate(date) < +toDate(dateToCompare);
+  return(
+    date ? +toDate(date) < +toDate(dateToCompare) : false
+  )
 }
