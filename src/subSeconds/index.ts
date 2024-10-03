@@ -8,6 +8,11 @@ export interface SubSecondsOptions<DateType extends Date = Date>
   extends ContextOptions<DateType> {}
 
 /**
+ * @name subSeconds
+ * @category Second Helpers
+ * @summary Subtract the specified number of seconds from the given date.
+ *
+ * @description
  * Subtract the specified number of seconds from the given date.
  *
  * @typeParam DateType - The `Date` type, the function operates on. Gets inferred from passed arguments. Allows to use extensions like [`UTCDate`](https://github.com/date-fns/utc).
