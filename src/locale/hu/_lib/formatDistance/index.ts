@@ -11,15 +11,48 @@ const translations = {
 };
 
 const withoutSuffixes = {
-  xseconds: " másodperc",
-  halfaminute: "fél perc",
-  xminutes: " perc",
-  xhours: " óra",
-  xdays: " nap",
-  xweeks: " hét",
-  xmonths: " hónap",
-  xyears: " év",
+  xseconds: {
+    "-1": " másodperce",
+    "1": " másodperc",
+    "0": " másodperc"
+  },
+  halfaminute: {
+    "-1": "fél perce",
+    "1": "fél perc",
+    "0": "fél perc",
+  },
+  xminutes: {
+    "-1": " perce",
+    "1": " perc",
+    "0": " perc"
+  },
+  xhours: {
+    "-1": " órája",
+    "1": " óra",
+    "0": " óra",
+  },
+  xdays: {
+    "-1": " napja",
+    "1": " nap",
+    "0": " nap",
+  },
+  xweeks: {
+    "-1": " hete",
+    "1": " hét",
+    "0": " hét",
+  },
+  xmonths: {
+    "-1": " hónapja",
+    "1": " hónap",
+    "0": " hónap",
+  },
+  xyears: {
+    "-1": " éve",
+    "1": " év",
+    "0": " év",
+  },
 };
+
 
 const withSuffixes = {
   xseconds: {
@@ -74,7 +107,7 @@ export const formatDistance: FormatDistanceFn = (token, count, options) => {
 
   const translated = addSuffix
     ? withSuffixes[key][comparison]
-    : withoutSuffixes[key];
+    : withoutSuffixes[key][comparison];
 
   let result = key === "halfaminute" ? translated : count + translated;
 

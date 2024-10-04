@@ -393,105 +393,105 @@
 
 If now is January 1st, 2000, 00:00.
 
-| Date                     | Result               | `includeSeconds: true`     | `addSuffix: true`               |
-| ------------------------ | -------------------- | -------------------------- | ------------------------------- |
-| 2006-01-01T00:00:00.000Z | körülbelül 6 év      | körülbelül 6 év            | körülbelül 6 év múlva           |
-| 2005-01-01T00:00:00.000Z | körülbelül 5 év      | körülbelül 5 év            | körülbelül 5 év múlva           |
-| 2004-01-01T00:00:00.000Z | körülbelül 4 év      | körülbelül 4 év            | körülbelül 4 év múlva           |
-| 2003-01-01T00:00:00.000Z | körülbelül 3 év      | körülbelül 3 év            | körülbelül 3 év múlva           |
-| 2002-01-01T00:00:00.000Z | körülbelül 2 év      | körülbelül 2 év            | körülbelül 2 év múlva           |
-| 2001-06-01T00:00:00.000Z | több mint 1 év       | több mint 1 év             | több mint 1 év múlva            |
-| 2001-02-01T00:00:00.000Z | körülbelül 1 év      | körülbelül 1 év            | körülbelül 1 év múlva           |
-| 2001-01-01T00:00:00.000Z | körülbelül 1 év      | körülbelül 1 év            | körülbelül 1 év múlva           |
-| 2000-06-01T00:00:00.000Z | 5 hónap              | 5 hónap                    | 5 hónap múlva                   |
-| 2000-03-01T00:00:00.000Z | 2 hónap              | 2 hónap                    | 2 hónap múlva                   |
-| 2000-02-01T00:00:00.000Z | körülbelül 1 hónap   | körülbelül 1 hónap         | körülbelül 1 hónap múlva        |
-| 2000-01-15T00:00:00.000Z | 14 nap               | 14 nap                     | 14 nap múlva                    |
-| 2000-01-02T00:00:00.000Z | 1 nap                | 1 nap                      | 1 nap múlva                     |
-| 2000-01-01T06:00:00.000Z | körülbelül 6 óra     | körülbelül 6 óra           | körülbelül 6 óra múlva          |
-| 2000-01-01T01:00:00.000Z | körülbelül 1 óra     | körülbelül 1 óra           | körülbelül 1 óra múlva          |
-| 2000-01-01T00:45:00.000Z | körülbelül 1 óra     | körülbelül 1 óra           | körülbelül 1 óra múlva          |
-| 2000-01-01T00:30:00.000Z | 30 perc              | 30 perc                    | 30 perc múlva                   |
-| 2000-01-01T00:15:00.000Z | 15 perc              | 15 perc                    | 15 perc múlva                   |
-| 2000-01-01T00:01:00.000Z | 1 perc               | 1 perc                     | 1 perc múlva                    |
-| 2000-01-01T00:00:25.000Z | kevesebb mint 1 perc | fél perc                   | kevesebb mint 1 perc múlva      |
-| 2000-01-01T00:00:15.000Z | kevesebb mint 1 perc | kevesebb mint 20 másodperc | kevesebb mint 1 perc múlva      |
-| 2000-01-01T00:00:05.000Z | kevesebb mint 1 perc | kevesebb mint 10 másodperc | kevesebb mint 1 perc múlva      |
-| 2000-01-01T00:00:00.000Z | kevesebb mint 1 perc | kevesebb mint 5 másodperc  | kevesebb mint 1 perce           |
-| 1999-12-31T23:59:55.000Z | kevesebb mint 1 perc | kevesebb mint 10 másodperc | kevesebb mint 1 perccel ezelőtt |
-| 1999-12-31T23:59:45.000Z | kevesebb mint 1 perc | kevesebb mint 20 másodperc | kevesebb mint 1 perccel ezelőtt |
-| 1999-12-31T23:59:35.000Z | kevesebb mint 1 perc | fél perc                   | kevesebb mint 1 perccel ezelőtt |
-| 1999-12-31T23:59:00.000Z | 1 perc               | 1 perc                     | 1 perccel ezelőtt               |
-| 1999-12-31T23:45:00.000Z | 15 perc              | 15 perc                    | 15 perccel ezelőtt              |
-| 1999-12-31T23:30:00.000Z | 30 perc              | 30 perc                    | 30 perccel ezelőtt              |
-| 1999-12-31T23:15:00.000Z | körülbelül 1 óra     | körülbelül 1 óra           | körülbelül 1 órával ezelőtt     |
-| 1999-12-31T23:00:00.000Z | körülbelül 1 óra     | körülbelül 1 óra           | körülbelül 1 órával ezelőtt     |
-| 1999-12-31T18:00:00.000Z | körülbelül 6 óra     | körülbelül 6 óra           | körülbelül 6 órával ezelőtt     |
-| 1999-12-30T00:00:00.000Z | 2 nap                | 2 nap                      | 2 nappal ezelőtt                |
-| 1999-12-15T00:00:00.000Z | 17 nap               | 17 nap                     | 17 nappal ezelőtt               |
-| 1999-12-01T00:00:00.000Z | körülbelül 1 hónap   | körülbelül 1 hónap         | körülbelül 1 hónappal ezelőtt   |
-| 1999-11-01T00:00:00.000Z | 2 hónap              | 2 hónap                    | 2 hónappal ezelőtt              |
-| 1999-06-01T00:00:00.000Z | 7 hónap              | 7 hónap                    | 7 hónappal ezelőtt              |
-| 1999-01-01T00:00:00.000Z | körülbelül 1 év      | körülbelül 1 év            | körülbelül 1 évvel ezelőtt      |
-| 1998-12-01T00:00:00.000Z | körülbelül 1 év      | körülbelül 1 év            | körülbelül 1 évvel ezelőtt      |
-| 1998-06-01T00:00:00.000Z | több mint 1 év       | több mint 1 év             | több mint 1 évvel ezelőtt       |
-| 1998-01-01T00:00:00.000Z | körülbelül 2 év      | körülbelül 2 év            | körülbelül 2 évvel ezelőtt      |
-| 1997-01-01T00:00:00.000Z | körülbelül 3 év      | körülbelül 3 év            | körülbelül 3 évvel ezelőtt      |
-| 1996-01-01T00:00:00.000Z | körülbelül 4 év      | körülbelül 4 év            | körülbelül 4 évvel ezelőtt      |
-| 1995-01-01T00:00:00.000Z | körülbelül 5 év      | körülbelül 5 év            | körülbelül 5 évvel ezelőtt      |
-| 1994-01-01T00:00:00.000Z | körülbelül 6 év      | körülbelül 6 év            | körülbelül 6 évvel ezelőtt      |
+| Date                     | Result                | `includeSeconds: true`      | `addSuffix: true`               |
+| ------------------------ | --------------------- | --------------------------- | ------------------------------- |
+| 2006-01-01T00:00:00.000Z | körülbelül 6 év       | körülbelül 6 év             | körülbelül 6 év múlva           |
+| 2005-01-01T00:00:00.000Z | körülbelül 5 év       | körülbelül 5 év             | körülbelül 5 év múlva           |
+| 2004-01-01T00:00:00.000Z | körülbelül 4 év       | körülbelül 4 év             | körülbelül 4 év múlva           |
+| 2003-01-01T00:00:00.000Z | körülbelül 3 év       | körülbelül 3 év             | körülbelül 3 év múlva           |
+| 2002-01-01T00:00:00.000Z | körülbelül 2 év       | körülbelül 2 év             | körülbelül 2 év múlva           |
+| 2001-06-01T00:00:00.000Z | több mint 1 év        | több mint 1 év              | több mint 1 év múlva            |
+| 2001-02-01T00:00:00.000Z | körülbelül 1 év       | körülbelül 1 év             | körülbelül 1 év múlva           |
+| 2001-01-01T00:00:00.000Z | körülbelül 1 év       | körülbelül 1 év             | körülbelül 1 év múlva           |
+| 2000-06-01T00:00:00.000Z | 5 hónap               | 5 hónap                     | 5 hónap múlva                   |
+| 2000-03-01T00:00:00.000Z | 2 hónap               | 2 hónap                     | 2 hónap múlva                   |
+| 2000-02-01T00:00:00.000Z | körülbelül 1 hónap    | körülbelül 1 hónap          | körülbelül 1 hónap múlva        |
+| 2000-01-15T00:00:00.000Z | 14 nap                | 14 nap                      | 14 nap múlva                    |
+| 2000-01-02T00:00:00.000Z | 1 nap                 | 1 nap                       | 1 nap múlva                     |
+| 2000-01-01T06:00:00.000Z | körülbelül 6 óra      | körülbelül 6 óra            | körülbelül 6 óra múlva          |
+| 2000-01-01T01:00:00.000Z | körülbelül 1 óra      | körülbelül 1 óra            | körülbelül 1 óra múlva          |
+| 2000-01-01T00:45:00.000Z | körülbelül 1 óra      | körülbelül 1 óra            | körülbelül 1 óra múlva          |
+| 2000-01-01T00:30:00.000Z | 30 perc               | 30 perc                     | 30 perc múlva                   |
+| 2000-01-01T00:15:00.000Z | 15 perc               | 15 perc                     | 15 perc múlva                   |
+| 2000-01-01T00:01:00.000Z | 1 perc                | 1 perc                      | 1 perc múlva                    |
+| 2000-01-01T00:00:25.000Z | kevesebb mint 1 perc  | fél perc                    | kevesebb mint 1 perc múlva      |
+| 2000-01-01T00:00:15.000Z | kevesebb mint 1 perc  | kevesebb mint 20 másodperc  | kevesebb mint 1 perc múlva      |
+| 2000-01-01T00:00:05.000Z | kevesebb mint 1 perc  | kevesebb mint 10 másodperc  | kevesebb mint 1 perc múlva      |
+| 2000-01-01T00:00:00.000Z | kevesebb mint 1 perc  | kevesebb mint 5 másodperc   | kevesebb mint 1 perce           |
+| 1999-12-31T23:59:55.000Z | kevesebb mint 1 perce | kevesebb mint 10 másodperce | kevesebb mint 1 perccel ezelőtt |
+| 1999-12-31T23:59:45.000Z | kevesebb mint 1 perce | kevesebb mint 20 másodperce | kevesebb mint 1 perccel ezelőtt |
+| 1999-12-31T23:59:35.000Z | kevesebb mint 1 perce | fél perce                   | kevesebb mint 1 perccel ezelőtt |
+| 1999-12-31T23:59:00.000Z | 1 perce               | 1 perce                     | 1 perccel ezelőtt               |
+| 1999-12-31T23:45:00.000Z | 15 perce              | 15 perce                    | 15 perccel ezelőtt              |
+| 1999-12-31T23:30:00.000Z | 30 perce              | 30 perce                    | 30 perccel ezelőtt              |
+| 1999-12-31T23:15:00.000Z | körülbelül 1 órája    | körülbelül 1 órája          | körülbelül 1 órával ezelőtt     |
+| 1999-12-31T23:00:00.000Z | körülbelül 1 órája    | körülbelül 1 órája          | körülbelül 1 órával ezelőtt     |
+| 1999-12-31T18:00:00.000Z | körülbelül 6 órája    | körülbelül 6 órája          | körülbelül 6 órával ezelőtt     |
+| 1999-12-30T00:00:00.000Z | 2 napja               | 2 napja                     | 2 nappal ezelőtt                |
+| 1999-12-15T00:00:00.000Z | 17 napja              | 17 napja                    | 17 nappal ezelőtt               |
+| 1999-12-01T00:00:00.000Z | körülbelül 1 hónapja  | körülbelül 1 hónapja        | körülbelül 1 hónappal ezelőtt   |
+| 1999-11-01T00:00:00.000Z | 2 hónapja             | 2 hónapja                   | 2 hónappal ezelőtt              |
+| 1999-06-01T00:00:00.000Z | 7 hónapja             | 7 hónapja                   | 7 hónappal ezelőtt              |
+| 1999-01-01T00:00:00.000Z | körülbelül 1 éve      | körülbelül 1 éve            | körülbelül 1 évvel ezelőtt      |
+| 1998-12-01T00:00:00.000Z | körülbelül 1 éve      | körülbelül 1 éve            | körülbelül 1 évvel ezelőtt      |
+| 1998-06-01T00:00:00.000Z | több mint 1 éve       | több mint 1 éve             | több mint 1 évvel ezelőtt       |
+| 1998-01-01T00:00:00.000Z | körülbelül 2 éve      | körülbelül 2 éve            | körülbelül 2 évvel ezelőtt      |
+| 1997-01-01T00:00:00.000Z | körülbelül 3 éve      | körülbelül 3 éve            | körülbelül 3 évvel ezelőtt      |
+| 1996-01-01T00:00:00.000Z | körülbelül 4 éve      | körülbelül 4 éve            | körülbelül 4 évvel ezelőtt      |
+| 1995-01-01T00:00:00.000Z | körülbelül 5 éve      | körülbelül 5 éve            | körülbelül 5 évvel ezelőtt      |
+| 1994-01-01T00:00:00.000Z | körülbelül 6 éve      | körülbelül 6 éve            | körülbelül 6 évvel ezelőtt      |
 
 ## `formatDistanceStrict`
 
 If now is January 1st, 2000, 00:00.
 
-| Date                     | Result       | `addSuffix: true`       | With forced unit (i.e. `hour`) |
-| ------------------------ | ------------ | ----------------------- | ------------------------------ |
-| 2006-01-01T00:00:00.000Z | 6 év         | 6 év múlva              | 52608 óra                      |
-| 2005-01-01T00:00:00.000Z | 5 év         | 5 év múlva              | 43848 óra                      |
-| 2004-01-01T00:00:00.000Z | 4 év         | 4 év múlva              | 35064 óra                      |
-| 2003-01-01T00:00:00.000Z | 3 év         | 3 év múlva              | 26304 óra                      |
-| 2002-01-01T00:00:00.000Z | 2 év         | 2 év múlva              | 17544 óra                      |
-| 2001-06-01T00:00:00.000Z | 1 év         | 1 év múlva              | 12408 óra                      |
-| 2001-02-01T00:00:00.000Z | 1 év         | 1 év múlva              | 9528 óra                       |
-| 2001-01-01T00:00:00.000Z | 1 év         | 1 év múlva              | 8784 óra                       |
-| 2000-06-01T00:00:00.000Z | 5 hónap      | 5 hónap múlva           | 3648 óra                       |
-| 2000-03-01T00:00:00.000Z | 2 hónap      | 2 hónap múlva           | 1440 óra                       |
-| 2000-02-01T00:00:00.000Z | 1 hónap      | 1 hónap múlva           | 744 óra                        |
-| 2000-01-15T00:00:00.000Z | 14 nap       | 14 nap múlva            | 336 óra                        |
-| 2000-01-02T00:00:00.000Z | 1 nap        | 1 nap múlva             | 24 óra                         |
-| 2000-01-01T06:00:00.000Z | 6 óra        | 6 óra múlva             | 6 óra                          |
-| 2000-01-01T01:00:00.000Z | 1 óra        | 1 óra múlva             | 1 óra                          |
-| 2000-01-01T00:45:00.000Z | 45 perc      | 45 perc múlva           | 1 óra                          |
-| 2000-01-01T00:30:00.000Z | 30 perc      | 30 perc múlva           | 1 óra                          |
-| 2000-01-01T00:15:00.000Z | 15 perc      | 15 perc múlva           | 0 óra                          |
-| 2000-01-01T00:01:00.000Z | 1 perc       | 1 perc múlva            | 0 óra                          |
-| 2000-01-01T00:00:25.000Z | 25 másodperc | 25 másodperc múlva      | 0 óra                          |
-| 2000-01-01T00:00:15.000Z | 15 másodperc | 15 másodperc múlva      | 0 óra                          |
-| 2000-01-01T00:00:05.000Z | 5 másodperc  | 5 másodperc múlva       | 0 óra                          |
-| 2000-01-01T00:00:00.000Z | 0 másodperc  | 0 másodperce            | 0 óra                          |
-| 1999-12-31T23:59:55.000Z | 5 másodperc  | 5 másodperccel ezelőtt  | 0 óra                          |
-| 1999-12-31T23:59:45.000Z | 15 másodperc | 15 másodperccel ezelőtt | 0 óra                          |
-| 1999-12-31T23:59:35.000Z | 25 másodperc | 25 másodperccel ezelőtt | 0 óra                          |
-| 1999-12-31T23:59:00.000Z | 1 perc       | 1 perccel ezelőtt       | 0 óra                          |
-| 1999-12-31T23:45:00.000Z | 15 perc      | 15 perccel ezelőtt      | 0 óra                          |
-| 1999-12-31T23:30:00.000Z | 30 perc      | 30 perccel ezelőtt      | 1 óra                          |
-| 1999-12-31T23:15:00.000Z | 45 perc      | 45 perccel ezelőtt      | 1 óra                          |
-| 1999-12-31T23:00:00.000Z | 1 óra        | 1 órával ezelőtt        | 1 óra                          |
-| 1999-12-31T18:00:00.000Z | 6 óra        | 6 órával ezelőtt        | 6 óra                          |
-| 1999-12-30T00:00:00.000Z | 2 nap        | 2 nappal ezelőtt        | 48 óra                         |
-| 1999-12-15T00:00:00.000Z | 17 nap       | 17 nappal ezelőtt       | 408 óra                        |
-| 1999-12-01T00:00:00.000Z | 1 hónap      | 1 hónappal ezelőtt      | 744 óra                        |
-| 1999-11-01T00:00:00.000Z | 2 hónap      | 2 hónappal ezelőtt      | 1464 óra                       |
-| 1999-06-01T00:00:00.000Z | 7 hónap      | 7 hónappal ezelőtt      | 5136 óra                       |
-| 1999-01-01T00:00:00.000Z | 1 év         | 1 évvel ezelőtt         | 8760 óra                       |
-| 1998-12-01T00:00:00.000Z | 1 év         | 1 évvel ezelőtt         | 9504 óra                       |
-| 1998-06-01T00:00:00.000Z | 2 év         | 2 évvel ezelőtt         | 13896 óra                      |
-| 1998-01-01T00:00:00.000Z | 2 év         | 2 évvel ezelőtt         | 17520 óra                      |
-| 1997-01-01T00:00:00.000Z | 3 év         | 3 évvel ezelőtt         | 26280 óra                      |
-| 1996-01-01T00:00:00.000Z | 4 év         | 4 évvel ezelőtt         | 35064 óra                      |
-| 1995-01-01T00:00:00.000Z | 5 év         | 5 évvel ezelőtt         | 43824 óra                      |
-| 1994-01-01T00:00:00.000Z | 6 év         | 6 évvel ezelőtt         | 52584 óra                      |
+| Date                     | Result        | `addSuffix: true`       | With forced unit (i.e. `hour`) |
+| ------------------------ | ------------- | ----------------------- | ------------------------------ |
+| 2006-01-01T00:00:00.000Z | 6 év          | 6 év múlva              | 52608 óra                      |
+| 2005-01-01T00:00:00.000Z | 5 év          | 5 év múlva              | 43848 óra                      |
+| 2004-01-01T00:00:00.000Z | 4 év          | 4 év múlva              | 35064 óra                      |
+| 2003-01-01T00:00:00.000Z | 3 év          | 3 év múlva              | 26304 óra                      |
+| 2002-01-01T00:00:00.000Z | 2 év          | 2 év múlva              | 17544 óra                      |
+| 2001-06-01T00:00:00.000Z | 1 év          | 1 év múlva              | 12408 óra                      |
+| 2001-02-01T00:00:00.000Z | 1 év          | 1 év múlva              | 9528 óra                       |
+| 2001-01-01T00:00:00.000Z | 1 év          | 1 év múlva              | 8784 óra                       |
+| 2000-06-01T00:00:00.000Z | 5 hónap       | 5 hónap múlva           | 3648 óra                       |
+| 2000-03-01T00:00:00.000Z | 2 hónap       | 2 hónap múlva           | 1440 óra                       |
+| 2000-02-01T00:00:00.000Z | 1 hónap       | 1 hónap múlva           | 744 óra                        |
+| 2000-01-15T00:00:00.000Z | 14 nap        | 14 nap múlva            | 336 óra                        |
+| 2000-01-02T00:00:00.000Z | 1 nap         | 1 nap múlva             | 24 óra                         |
+| 2000-01-01T06:00:00.000Z | 6 óra         | 6 óra múlva             | 6 óra                          |
+| 2000-01-01T01:00:00.000Z | 1 óra         | 1 óra múlva             | 1 óra                          |
+| 2000-01-01T00:45:00.000Z | 45 perc       | 45 perc múlva           | 1 óra                          |
+| 2000-01-01T00:30:00.000Z | 30 perc       | 30 perc múlva           | 1 óra                          |
+| 2000-01-01T00:15:00.000Z | 15 perc       | 15 perc múlva           | 0 óra                          |
+| 2000-01-01T00:01:00.000Z | 1 perc        | 1 perc múlva            | 0 óra                          |
+| 2000-01-01T00:00:25.000Z | 25 másodperc  | 25 másodperc múlva      | 0 óra                          |
+| 2000-01-01T00:00:15.000Z | 15 másodperc  | 15 másodperc múlva      | 0 óra                          |
+| 2000-01-01T00:00:05.000Z | 5 másodperc   | 5 másodperc múlva       | 0 óra                          |
+| 2000-01-01T00:00:00.000Z | 0 másodperc   | 0 másodperce            | 0 óra                          |
+| 1999-12-31T23:59:55.000Z | 5 másodperce  | 5 másodperccel ezelőtt  | 0 órája                        |
+| 1999-12-31T23:59:45.000Z | 15 másodperce | 15 másodperccel ezelőtt | 0 órája                        |
+| 1999-12-31T23:59:35.000Z | 25 másodperce | 25 másodperccel ezelőtt | 0 órája                        |
+| 1999-12-31T23:59:00.000Z | 1 perce       | 1 perccel ezelőtt       | 0 órája                        |
+| 1999-12-31T23:45:00.000Z | 15 perce      | 15 perccel ezelőtt      | 0 órája                        |
+| 1999-12-31T23:30:00.000Z | 30 perce      | 30 perccel ezelőtt      | 1 órája                        |
+| 1999-12-31T23:15:00.000Z | 45 perce      | 45 perccel ezelőtt      | 1 órája                        |
+| 1999-12-31T23:00:00.000Z | 1 órája       | 1 órával ezelőtt        | 1 órája                        |
+| 1999-12-31T18:00:00.000Z | 6 órája       | 6 órával ezelőtt        | 6 órája                        |
+| 1999-12-30T00:00:00.000Z | 2 napja       | 2 nappal ezelőtt        | 48 órája                       |
+| 1999-12-15T00:00:00.000Z | 17 napja      | 17 nappal ezelőtt       | 408 órája                      |
+| 1999-12-01T00:00:00.000Z | 1 hónapja     | 1 hónappal ezelőtt      | 744 órája                      |
+| 1999-11-01T00:00:00.000Z | 2 hónapja     | 2 hónappal ezelőtt      | 1464 órája                     |
+| 1999-06-01T00:00:00.000Z | 7 hónapja     | 7 hónappal ezelőtt      | 5136 órája                     |
+| 1999-01-01T00:00:00.000Z | 1 éve         | 1 évvel ezelőtt         | 8760 órája                     |
+| 1998-12-01T00:00:00.000Z | 1 éve         | 1 évvel ezelőtt         | 9504 órája                     |
+| 1998-06-01T00:00:00.000Z | 2 éve         | 2 évvel ezelőtt         | 13896 órája                    |
+| 1998-01-01T00:00:00.000Z | 2 éve         | 2 évvel ezelőtt         | 17520 órája                    |
+| 1997-01-01T00:00:00.000Z | 3 éve         | 3 évvel ezelőtt         | 26280 órája                    |
+| 1996-01-01T00:00:00.000Z | 4 éve         | 4 évvel ezelőtt         | 35064 órája                    |
+| 1995-01-01T00:00:00.000Z | 5 éve         | 5 évvel ezelőtt         | 43824 órája                    |
+| 1994-01-01T00:00:00.000Z | 6 éve         | 6 évvel ezelőtt         | 52584 órája                    |
 
 ## `formatRelative`
 
