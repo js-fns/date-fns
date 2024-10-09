@@ -42,7 +42,7 @@ export default config = {
   plugins: [
     new webpack.ContextReplacementPlugin(
       /date-fns[/\\]locale/,
-      new RegExp(`(${locales.join("|")})\.js$`),
+      new RegExp(`(${supportedLocales.join("|")})\.js$`),
     ),
   ],
 };
