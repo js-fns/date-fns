@@ -23,4 +23,11 @@ describe("getUnixTime", () => {
     expect(getUnixTime(new Date(1001))).toBe(1);
     expect(getUnixTime(new Date(-1001))).toBe(-1);
   });
+
+  it("should return the same value if the inputs are the same in terms of seconds", () => {
+    const date1 = getUnixTime(new Date("1960-01-01T00:00:00.2Z"))
+    const date2 = getUnixTime(new Date("1960-01-01T00:00:00Z"))
+
+    expect(date1).toBe(date2)
+  });
 });

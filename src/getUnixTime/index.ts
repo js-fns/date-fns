@@ -9,7 +9,7 @@ import type { DateArg } from "../types.js";
  * @description
  * Get the seconds timestamp of the given date.
  *
- * @param date - The given date
+ * @param date - The given date. If the date is in milliseconds, it will be rounded to the nearest second.
  *
  * @returns The timestamp
  *
@@ -19,5 +19,5 @@ import type { DateArg } from "../types.js";
  * //=> 1330512305
  */
 export function getUnixTime(date: DateArg<Date> & {}): number {
-  return Math.trunc(+toDate(date) / 1000);
+  return Math.round(+toDate(date) / 1000);
 }
