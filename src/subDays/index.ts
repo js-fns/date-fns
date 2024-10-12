@@ -23,7 +23,7 @@ export interface SubDaysOptions<DateType extends Date = Date>
  *
  * @example
  * // Subtract 10 days from 1 September 2014:
- * const result = subDays(new Date(2014, 8, 1), 10)
+ * const result = subDays(new Date(2014, 9, 1), 10)
  * //=> Fri Aug 22 2014 00:00:00
  */
 export function subDays<
