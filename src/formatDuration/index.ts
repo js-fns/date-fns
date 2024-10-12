@@ -76,8 +76,14 @@ const defaultFormat: DurationUnit[] = [
  * // Customize the zeros presence
  * formatDuration({ years: 0, months: 9 })
  * //=> '9 months'
+ * formatDuration({ months: 9, days: 0, hours: 10 })
+ * //=> '9 months 10 hours'
  * formatDuration({ years: 0, months: 9 }, { zero: true })
  * //=> '0 years 9 months'
+ * formatDuration({ months: 9, days: 0, hours: 10 }, { zero: true })
+ * //=> '9 months 0 days 10 hours'
+ * formatDuration({ months: 9, days: 0, hours: 0 }, { zero: true })
+ * //=> '9 months 0 days 0 hours'
  *
  * @example
  * // Customize the delimiter
