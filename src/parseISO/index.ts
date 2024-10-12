@@ -135,6 +135,9 @@ function splitDateString(dateString: string): DateString {
     timeString = array[0];
   } else {
     dateStrings.date = array[0];
+    const date = array[0];
+    if (date.length < 4) dateStrings.date = addLeadingZeros(date);
+    else dateStrings.date = array[0];
     timeString = array[1];
     if (patterns.timeZoneDelimiter.test(dateStrings.date)) {
       dateStrings.date = dateString.split(patterns.timeZoneDelimiter)[0];
@@ -161,10 +164,10 @@ function splitDateString(dateString: string): DateString {
 function parseYear(dateString: string, additionalDigits: number): ParsedYear {
   const regex = new RegExp(
     "^(?:(\\d{4}|[+-]\\d{" +
-      (4 + additionalDigits) +
-      "})|(\\d{2}|[+-]\\d{" +
-      (2 + additionalDigits) +
-      "})$)",
+    (4 + additionalDigits) +
+    "})|(\\d{2}|[+-]\\d{" +
+    (2 + additionalDigits) +
+    "})$)",
   );
 
   const captures = dateString.match(regex);
@@ -316,4 +319,13 @@ function validateTime(
 
 function validateTimezone(_hours: number, minutes: number): boolean {
   return minutes >= 0 && minutes <= 59;
+}
+
+function addLeadingZeros(year: string) {
+  const zerosToAdd = 4 - year.length;
+
+  for (let i = 0; i < zerosToAdd; i++) {
+    year = '0' + year;
+  }
+  return year;
 }

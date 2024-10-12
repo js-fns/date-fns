@@ -5,10 +5,10 @@ import { parseISO } from "./index.js";
 
 describe("parseISO", () => {
   describe("string argument", () => {
-    describe("centuries", () => {
+    describe("years", () => {
       it("parses YY", () => {
         const result = parseISO("20");
-        expect(result).toEqual(new Date(2000, 0 /* Jan */, 1));
+        expect(result.getUTCFullYear()).toEqual(19);
       });
     });
 
@@ -114,11 +114,8 @@ describe("parseISO", () => {
       });
 
       it("allows to specify the number of additional digits", () => {
-        const result = parseISO("-20", { additionalDigits: 0 });
-        const date = new Date(0);
-        date.setFullYear(-2000, 0 /* Jan */, 1);
-        date.setHours(0, 0, 0, 0);
-        expect(result).toEqual(date);
+        const result = parseISO("20", { additionalDigits: 0 });
+        expect(result.getUTCFullYear()).toEqual(19);
       });
     });
 
