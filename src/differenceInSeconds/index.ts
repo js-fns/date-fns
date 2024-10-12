@@ -29,6 +29,19 @@ export interface DifferenceInSecondsOptions extends RoundingOptions {}
  *   new Date(2014, 6, 2, 12, 30, 7, 999)
  * )
  * //=> 12
+ *
+ * @example
+ * // Take note of the order of parameters,
+ * // Function can return a negative number
+ * // With parameters reversed, how many seconds are between
+ * // 2 July 2014 12:30:20.000 and 2 July 2014 12:30:07.999?
+ *
+ * const result = differenceInSeconds(
+ *   new Date(2014, 6, 2, 12, 30, 7, 999)
+ *   new Date(2014, 6, 2, 12, 30, 20, 0)
+ * )
+ * //=> -12
+ *
  */
 export function differenceInSeconds(
   laterDate: DateArg<Date> & {},
