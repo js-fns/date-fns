@@ -10,7 +10,7 @@ export interface FormatDurationOptions
   extends LocalizedOptions<"formatDistance"> {
   /** The array of units to format */
   format?: DurationUnit[];
-  /** Should be zeros be included in the output? */
+  /** Should zeros be included in the output? */
   zero?: boolean;
   /** The delimiter string to use */
   delimiter?: string;
