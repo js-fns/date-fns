@@ -12,6 +12,7 @@ import { match } from "./_lib/match/index.js";
  * @iso-639-2 isl
  * @author Derek Blank [@derekblank](https://github.com/derekblank)
  * @author Arnór Ýmir [@lamayg](https://github.com/lamayg)
+ * @author Magni Marelsson [@magnimarels](https://github.com/magnimarels)
  */
 export const is: Locale = {
   code: "is",

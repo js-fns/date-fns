@@ -19,17 +19,17 @@ const quarterValues = {
 };
 
 const monthValues = {
-  narrow: ["J", "F", "M", "A", "M", "J", "J", "Á", "S", "Ó", "N", "D"] as const,
+  narrow: ["J", "F", "M", "A", "M", "J", "J", "Á", "S", "O", "N", "D"] as const,
   abbreviated: [
     "jan.",
     "feb.",
-    "mars",
-    "apríl",
+    "mar.",
+    "apr.",
     "maí",
-    "júní",
-    "júlí",
-    "ágúst",
-    "sept.",
+    "jún.",
+    "júl.",
+    "ágú.",
+    "sep.",
     "okt.",
     "nóv.",
     "des.",
@@ -75,14 +75,14 @@ const dayValues = {
 
 const dayPeriodValues = {
   narrow: {
-    am: "f",
-    pm: "e",
-    midnight: "miðnætti",
-    noon: "hádegi",
-    morning: "morgunn",
-    afternoon: "síðdegi",
-    evening: "kvöld",
-    night: "nótt",
+    am: "f.",
+    pm: "e.",
+    midnight: "mn.",
+    noon: "h.",
+    morning: "mn.",
+    afternoon: "sd.",
+    evening: "kv.",
+    night: "n.",
   },
   abbreviated: {
     am: "f.h.",
@@ -110,12 +110,12 @@ const formattingDayPeriodValues = {
   narrow: {
     am: "f",
     pm: "e",
-    midnight: "á miðnætti",
-    noon: "á hádegi",
-    morning: "að morgni",
-    afternoon: "síðdegis",
-    evening: "um kvöld",
-    night: "um nótt",
+    midnight: "mn.",
+    noon: "h.",
+    morning: "mn.",
+    afternoon: "sd.",
+    evening: "kv.",
+    night: "n.",
   },
   abbreviated: {
     am: "f.h.",
