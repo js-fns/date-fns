@@ -51,7 +51,7 @@ const monthValues = {
 };
 
 const dayValues = {
-  narrow: ["d", "l", "m", "m", "j", "v", "s"] as const,
+  narrow: ["d", "l", "m", "m", "x", "v", "s"] as const,
   short: ["do", "lu", "ma", "me", "xo", "ve", "sa"] as const,
   abbreviated: ["dom", "lun", "mar", "mer", "xov", "ven", "sab"] as const,
   wide: [
