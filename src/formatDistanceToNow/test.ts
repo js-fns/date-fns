@@ -94,6 +94,23 @@ describe("formatDistanceToNow", () => {
     });
   });
 
+  describe("weeks", () => {
+    describe("when the includeWeeks option is true", () => {
+      it("about 1 week", () => {
+        const result = formatDistanceToNow(new Date(1986, 2, 26, 10, 32, 0),
+          { includeWeeks: true },
+        );
+        expect(result).toBe("about 1 week");
+      });
+      it("n weeks", () => {
+        const result = formatDistanceToNow(new Date(1986, 2, 12, 10, 32, 0),
+          { includeWeeks: true },
+        );
+        expect(result).toBe("3 weeks");
+      });
+    });
+  });
+
   describe("months", () => {
     it("about 1 month", () => {
       const result = formatDistanceToNow(new Date(1986, 2, 4, 10, 32, 0));

@@ -5,6 +5,7 @@ import { getTimezoneOffsetInMilliseconds } from "../_lib/getTimezoneOffsetInMill
 import { normalizeDates } from "../_lib/normalizeDates/index.js";
 import { compareAsc } from "../compareAsc/index.js";
 import {
+  daysInWeek,
   millisecondsInMinute,
   minutesInDay,
   minutesInMonth,
@@ -26,6 +27,8 @@ export interface FormatDistanceStrictOptions
     ContextOptions<Date> {
   /** Add "X ago"/"in X" in the locale language */
   addSuffix?: boolean;
+  /** Include week unit for distances between 7 and 30 days */
+  includeWeeks?: boolean;
   /** If specified, will force the unit */
   unit?: FormatDistanceStrictUnit;
 }
@@ -38,6 +41,7 @@ export type FormatDistanceStrictUnit =
   | "minute"
   | "hour"
   | "day"
+  | "week"
   | "month"
   | "year";
 
@@ -59,6 +63,11 @@ export type FormatDistanceStrictUnit =
  * | 1 ... 29 days          | [1..29] days        |
  * | 1 ... 11 months        | [1..11] months      |
  * | 1 ... N years          | [1..N]  years       |
+ * 
+ * With `options.includeWeeks == true`:
+ * | Distance between dates | Result               |
+ * |------------------------|----------------------|
+ * | 1 ... 4 weeks          | [1..4] weeks         |
  *
  * @param laterDate - The date
  * @param earlierDate - The date to compare with
@@ -68,7 +77,7 @@ export type FormatDistanceStrictUnit =
  *
  * @throws `date` must not be Invalid Date
  * @throws `baseDate` must not be Invalid Date
- * @throws `options.unit` must be 'second', 'minute', 'hour', 'day', 'month' or 'year'
+ * @throws `options.unit` must be 'second', 'minute', 'hour', 'day', 'week', 'month' or 'year'
  * @throws `options.locale` must contain `formatDistance` property
  *
  * @example
@@ -167,7 +176,15 @@ export function formatDistanceStrict(
     } else if (minutes < minutesInDay) {
       unit = "hour";
     } else if (dstNormalizedMinutes < minutesInMonth) {
-      unit = "day";
+      if (options?.includeWeeks) {
+        if (dstNormalizedMinutes / minutesInDay / daysInWeek >= 1) {
+          unit = "week";
+        } else {
+          unit = "day";
+        }
+      } else {
+        unit = "day";
+      }
     } else if (dstNormalizedMinutes < minutesInYear) {
       unit = "month";
     } else {
@@ -196,6 +213,11 @@ export function formatDistanceStrict(
   } else if (unit === "day") {
     const days = roundingMethod(dstNormalizedMinutes / minutesInDay);
     return locale.formatDistance("xDays", days, localizeOptions);
+
+    // 1 up to 4 weeks
+  } else if (unit === "week") {
+    const weeks = roundingMethod(dstNormalizedMinutes / minutesInDay / daysInWeek);
+    return locale.formatDistance("xWeeks", weeks, localizeOptions);
 
     // 1 up to 12 months
   } else if (unit === "month") {

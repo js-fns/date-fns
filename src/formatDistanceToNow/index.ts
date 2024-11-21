@@ -47,6 +47,12 @@ export interface FormatDistanceToNowOptions
  * | 20 secs ... 40 secs | half a minute        |
  * | 40 secs ... 60 secs | less than a minute   |
  * | 60 secs ... 90 secs | 1 minute             |
+ * 
+ * With `options.includeWeeks == true`:
+ * | Distance to now                                                   | Result               |
+ * |-------------------------------------------------------------------|----------------------|
+ * | 6 days 23 hrs 59 mins 30 secs ... 13 days 23 hrs 59 mins 30 secs  | about 1 week         |
+ * | 13 days 23 hrs 59 mins 30 secs ... 29 days 23 hrs 59 mins 30 secs | [2..4] weeks         |
  *
  * @param date - The given date
  * @param options - The object with options
@@ -71,6 +77,14 @@ export interface FormatDistanceToNowOptions
  *   {includeSeconds: true}
  * )
  * //=> 'less than 20 seconds'
+ * 
+ * @example
+ * // If today is 1 January 2015, what is the distance to 8 January 2015, including weeks?
+ * const result = formatDistanceToNow(
+ *   new Date(2015, 0, 8, 0, 0, 0),
+ *   {includeWeeks: true}
+ * )
+ * //=> 'about 1 week'
  *
  * @example
  * // If today is 1 January 2015,

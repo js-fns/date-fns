@@ -29,6 +29,11 @@ export interface FormatDistanceToNowStrictOptions
  * | 1 ... 29 days          | [1..29] days        |
  * | 1 ... 11 months        | [1..11] months      |
  * | 1 ... N years          | [1..N]  years       |
+ * 
+ * With `options.includeWeeks == true`:
+ * | Distance between dates | Result               |
+ * |------------------------|----------------------|
+ * | 1 ... 4 weeks          | [1..4] weeks         |
  *
  * @param date - The given date
  * @param options - An object with options.

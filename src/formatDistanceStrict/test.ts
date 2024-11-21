@@ -78,6 +78,27 @@ describe("formatDistanceStrict", () => {
     });
   });
 
+  describe("weeks", () => {
+    describe("when the includeWeeks option is true", () => {
+      it("1 week", () => {
+        const result = formatDistanceStrict(
+          new Date(1986, 3, 4, 10, 32, 0),
+          new Date(1986, 3, 11, 10, 32, 0),
+          { includeWeeks: true },
+        );
+        expect(result).toBe("1 week");
+      });
+      it("n weeks", () => {
+        const result = formatDistanceStrict(
+          new Date(1986, 3, 4, 10, 32, 0),
+          new Date(1986, 3, 25, 10, 32, 0),
+          { includeWeeks: true },
+        );
+        expect(result).toBe("3 weeks");
+      });
+    });
+  });
+
   describe("months", () => {
     it("1 month", () => {
       const result = formatDistanceStrict(
@@ -246,6 +267,38 @@ describe("formatDistanceStrict", () => {
         expect(result).toBe("60 days");
       });
     });
+
+    describe("weeks", () => {
+      describe("when the includeWeeks option is true", () => {
+        it("0 weeks", () => {
+          const result = formatDistanceStrict(
+            new Date(1986, 3, 4, 10, 32, 0),
+            new Date(1986, 3, 4, 10, 32, 0),
+            { includeWeeks: true, unit: "week" },
+          );
+          expect(result).toBe("0 weeks");
+        });
+
+        it("2 weeks", () => {
+          const result = formatDistanceStrict(
+            new Date(1986, 3, 4, 10, 32, 0),
+            new Date(1986, 3, 18, 10, 32, 0),
+            { includeWeeks: true, unit: "week" },
+          );
+          expect(result).toBe("2 weeks");
+        });
+
+        it("4 weeks", () => {
+          const result = formatDistanceStrict(
+            new Date(1986, 3, 4, 10, 32, 0),
+            new Date(1986, 3, 32, 10, 32, 0),
+            { includeWeeks: true, unit: "week" },
+          );
+          expect(result).toBe("4 weeks");
+        });
+      });
+    });
+
     describe("month", () => {
       it("0 months", () => {
         const result = formatDistanceStrict(

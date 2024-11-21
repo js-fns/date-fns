@@ -3,7 +3,7 @@ import { getDefaultOptions } from "../_lib/defaultOptions/index.js";
 import { getTimezoneOffsetInMilliseconds } from "../_lib/getTimezoneOffsetInMilliseconds/index.js";
 import { normalizeDates } from "../_lib/normalizeDates/index.js";
 import { compareAsc } from "../compareAsc/index.js";
-import { minutesInDay, minutesInMonth } from "../constants/index.js";
+import { daysInWeek, minutesInDay, minutesInMonth } from "../constants/index.js";
 import { differenceInMonths } from "../differenceInMonths/index.js";
 import { differenceInSeconds } from "../differenceInSeconds/index.js";
 import type { ContextOptions, DateArg, LocalizedOptions } from "../types.js";
@@ -16,6 +16,8 @@ export interface FormatDistanceOptions
     ContextOptions<Date> {
   /** Distances less than a minute are more detailed */
   includeSeconds?: boolean;
+  /** Include week unit for distances between 7 and 30 days */
+  includeWeeks?: boolean;
   /** Add "X ago"/"in X" in the locale language */
   addSuffix?: boolean;
 }
@@ -56,6 +58,12 @@ export interface FormatDistanceOptions
  * | 20 secs ... 40 secs    | half a minute        |
  * | 40 secs ... 60 secs    | less than a minute   |
  * | 60 secs ... 90 secs    | 1 minute             |
+ * 
+ * With `options.includeWeeks == true`:
+ * | Distance between dates                                            | Result               |
+ * |-------------------------------------------------------------------|----------------------|
+ * | 6 days 23 hrs 59 mins 30 secs ... 13 days 23 hrs 59 mins 30 secs  | about 1 week         |
+ * | 13 days 23 hrs 59 mins 30 secs ... 29 days 23 hrs 59 mins 30 secs | [2..4] weeks         |
  *
  * @param laterDate - The date
  * @param earlierDate - The date to compare with
@@ -81,6 +89,15 @@ export interface FormatDistanceOptions
  *   { includeSeconds: true }
  * )
  * //=> 'less than 20 seconds'
+ * 
+ *  * @example
+ * // What is the distance between 8 January 2015 and 1 January 2015, including weeks?
+ * const result = formatDistanceToNow(
+ *   new Date(2015, 0, 8, 0, 0, 0),
+ *   new Date(2015, 0, 1, 0, 0, 0),
+ *   { includeWeeks: true }
+ * )
+ * //=> 'about 1 week'
  *
  * @example
  * // What is the distance from 1 January 2016
@@ -172,8 +189,17 @@ export function formatDistance(
 
     // 1.75 days up to 30 days
   } else if (minutes < minutesInMonth) {
-    const days = Math.round(minutes / minutesInDay);
-    return locale.formatDistance("xDays", days, localizeOptions);
+    if (minutes / minutesInDay >= 7 && options?.includeWeeks) {
+      if (minutes / minutesInDay < 14) {
+        return locale.formatDistance("aboutXWeeks", 1, localizeOptions);
+      } else {
+        const weeks = Math.round(minutes / minutesInDay / daysInWeek);
+        return locale.formatDistance("xWeeks", weeks, localizeOptions);
+      }
+    } else {
+      const days = Math.round(minutes / minutesInDay);
+      return locale.formatDistance("xDays", days, localizeOptions);
+    }
 
     // 1 month up to 2 months
   } else if (minutes < minutesInMonth * 2) {

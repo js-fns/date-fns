@@ -124,6 +124,27 @@ describe("formatDistance", () => {
     });
   });
 
+  describe("weeks", () => {
+    describe("when the includeWeeks option is true", () => {
+      it("about 1 week", () => {
+        const result = formatDistance(
+          new Date(1986, 3, 4, 10, 32, 0),
+          new Date(1986, 3, 11, 10, 32, 0),
+          { includeWeeks: true },
+        );
+        expect(result).toBe("about 1 week");
+      });
+      it("n weeks", () => {
+        const result = formatDistance(
+          new Date(1986, 3, 4, 10, 32, 0),
+          new Date(1986, 3, 25, 10, 32, 0),
+          { includeWeeks: true },
+        );
+        expect(result).toBe("3 weeks");
+      });
+    });
+  });
+
   describe("months", () => {
     it("about 1 month", () => {
       const result = formatDistance(
