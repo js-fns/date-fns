@@ -14,11 +14,11 @@ const formatDistanceLocale: FormatDistanceLocale<FormatDistanceTokenValue> = {
   },
 
   xSeconds: {
-    one: "1 segundo",
+    one: "segundo bat",
     other: "{{count}} segundo",
   },
 
-  halfAMinute: "minutu erdi",
+  halfAMinute: "minutu erdi bat",
 
   lessThanXMinutes: {
     one: "minutu bat baino gutxiago",
@@ -26,62 +26,62 @@ const formatDistanceLocale: FormatDistanceLocale<FormatDistanceTokenValue> = {
   },
 
   xMinutes: {
-    one: "1 minutu",
+    one: "minutu bat",
     other: "{{count}} minutu",
   },
 
   aboutXHours: {
-    one: "1 ordu gutxi gorabehera",
-    other: "{{count}} ordu gutxi gorabehera",
+    one: "ordubete inguru",
+    other: "{{count}} ordu inguru",
   },
 
   xHours: {
-    one: "1 ordu",
+    one: "ordu bat",
     other: "{{count}} ordu",
   },
 
   xDays: {
-    one: "1 egun",
+    one: "egun bat",
     other: "{{count}} egun",
   },
 
   aboutXWeeks: {
-    one: "aste 1 inguru",
+    one: "astebete inguru",
     other: "{{count}} aste inguru",
   },
 
   xWeeks: {
-    one: "1 aste",
-    other: "{{count}} astean",
+    one: "aste bat",
+    other: "{{count}} aste",
   },
 
   aboutXMonths: {
-    one: "1 hilabete gutxi gorabehera",
-    other: "{{count}} hilabete gutxi gorabehera",
+    one: "hilabete inguru",
+    other: "{{count}} hilabete inguru",
   },
 
   xMonths: {
-    one: "1 hilabete",
+    one: "hilabete bat",
     other: "{{count}} hilabete",
   },
 
   aboutXYears: {
-    one: "1 urte gutxi gorabehera",
-    other: "{{count}} urte gutxi gorabehera",
+    one: "urtebete inguru",
+    other: "{{count}} urte inguru",
   },
 
   xYears: {
-    one: "1 urte",
+    one: "urte bat",
     other: "{{count}} urte",
   },
 
   overXYears: {
-    one: "1 urte baino gehiago",
+    one: "urtebete baino gehiago",
     other: "{{count}} urte baino gehiago",
   },
 
   almostXYears: {
-    one: "ia 1 urte",
+    one: "ia urtebete",
     other: "ia {{count}} urte",
   },
 };
@@ -100,7 +100,7 @@ export const formatDistance: FormatDistanceFn = (token, count, options) => {
 
   if (options?.addSuffix) {
     if (options.comparison && options.comparison > 0) {
-      return "en " + result;
+      return result + " barru";
     } else {
       return "duela " + result;
     }

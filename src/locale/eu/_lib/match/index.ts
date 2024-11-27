@@ -7,19 +7,19 @@ const matchOrdinalNumberPattern = /^(\d+)(.)?/i;
 const parseOrdinalNumberPattern = /\d+/i;
 
 const matchEraPatterns = {
-  narrow: /^(k.a.|k.o.)/i,
-  abbreviated: /^(k.a.|k.o.)/i,
-  wide: /^(kristo aurretik|kristo ondoren)/i,
+  narrow: /^(K\.a\.|K\.o\.)/i,
+  abbreviated: /^(K\.a\.|K\.o\.)/i,
+  wide: /^(Kristo aurretik|Kristo ondoren)/i,
 };
 const parseEraPatterns = {
-  narrow: [/^k.a./i, /^k.o./i] as const,
-  abbreviated: [/^(k.a.)/i, /^(k.o.)/i] as const,
-  wide: [/^(kristo aurretik)/i, /^(kristo ondoren)/i] as const,
+  narrow: [/^K\.a\./i, /^K\.o\./i] as const,
+  abbreviated: [/^(K\.a\.)/i, /^(K\.o\.)/i] as const,
+  wide: [/^(Kristo aurretik)/i, /^(Kristo ondoren)/i] as const,
 };
 
 const matchQuarterPatterns = {
   narrow: /^[1234]/i,
-  abbreviated: /^[1234]H/i,
+  abbreviated: /^[1234]Hh/i,
   wide: /^[1234](.)? hiruhilekoa/i,
 };
 const parseQuarterPatterns = {
@@ -28,7 +28,7 @@ const parseQuarterPatterns = {
 
 const matchMonthPatterns = {
   narrow: /^[uomaei]/i,
-  abbreviated: /^(urt|ots|mar|api|mai|eka|uzt|abu|ira|urr|aza|abe)/i,
+  abbreviated: /^(urt\.|ots\.|mar\.|api\.|mai\.|eka\.|uzt\.|abu\.|ira\.|urr\.|aza\.|abe\.)/i,
   wide: /^(urtarrila|otsaila|martxoa|apirila|maiatza|ekaina|uztaila|abuztua|iraila|urria|azaroa|abendua)/i,
 };
 const parseMonthPatterns = {
@@ -46,39 +46,53 @@ const parseMonthPatterns = {
     /^a/i,
     /^a/i,
   ] as const,
+  wide: [
+    /^urtarrila/i,
+    /^otsaila/i,
+    /^martxoa/i,
+    /^apirila/i,
+    /^maiatza/i,
+    /^ekaina/i,
+    /^uztaila/i,
+    /^abuztua/i,
+    /^iraila/i,
+    /^urria/i,
+    /^azaroa/i,
+    /^abendua/i,
+  ] as const,
   any: [
-    /^urt/i,
-    /^ots/i,
-    /^mar/i,
-    /^api/i,
-    /^mai/i,
-    /^eka/i,
-    /^uzt/i,
-    /^abu/i,
-    /^ira/i,
-    /^urr/i,
-    /^aza/i,
-    /^abe/i,
+    /^urt\./i,
+    /^ots\./i,
+    /^mar\./i,
+    /^api\./i,
+    /^mai\./i,
+    /^eka\./i,
+    /^uzt\./i,
+    /^abu\./i,
+    /^ira\./i,
+    /^urr\./i,
+    /^aza\./i,
+    /^abe\./i,
   ] as const,
 };
 
 const matchDayPatterns = {
   narrow: /^[iaol]/i,
   short: /^(ig|al|as|az|og|or|lr)/i,
-  abbreviated: /^(iga|ast|ast|ast|ost|ost|lar)/i,
+  abbreviated: /^(ig\.|al\.|as\.|az\.|og\.|or\.|lr\.)/i,
   wide: /^(igandea|astelehena|asteartea|asteazkena|osteguna|ostirala|larunbata)/i,
 };
 const parseDayPatterns = {
   narrow: [/^i/i, /^a/i, /^a/i, /^a/i, /^o/i, /^o/i, /^l/i] as const,
   short: [/^ig/i, /^al/i, /^as/i, /^az/i, /^og/i, /^or/i, /^lr/i] as const,
   abbreviated: [
-    /^iga/i,
-    /^ast/i,
-    /^ast/i,
-    /^ast/i,
-    /^ost/i,
-    /^ost/i,
-    /^lar/i,
+    /^ig\./i,
+    /^al\./i,
+    /^as\./i,
+    /^az\./i,
+    /^og\./i,
+    /^or\./i,
+    /^lr\./i,
   ] as const,
   wide: [
     /^igandea/i,
@@ -92,28 +106,28 @@ const parseDayPatterns = {
 };
 
 const matchDayPeriodPatterns = {
-  narrow: /^(a|p|ge|eg|((goiza|goizean)|arratsaldea|(gaua|gauean)))/i,
-  any: /^([ap]\.?\s?m\.?|gauerdia|eguerdia|((goiza|goizean)|arratsaldea|(gaua|gauean)))/i,
+  narrow: /^(am|pm|((gauerd|eguerd|goizald|arratsald|iluntz)(\.))|(gaua|gauean))/i,
+  any: /^([ap]\.?\s?m\.?|((gauerd|eguerd|goizald|arrats|arratsald|iluntz)(\.|ian|ean))|(gaua|gauean))/i,
 };
 const parseDayPeriodPatterns = {
   narrow: {
-    am: /^a/i,
-    pm: /^p/i,
-    midnight: /^ge/i,
-    noon: /^eg/i,
-    morning: /goiz/i,
-    afternoon: /arratsaldea/i,
-    evening: /arratsaldea/i,
+    am: /^am/i,
+    pm: /^pm/i,
+    midnight: /^gauerd/i,
+    noon: /^eguerd/i,
+    morning: /goizald/i,
+    afternoon: /arrats/i,
+    evening: /iluntz/i,
     night: /gau/i,
   },
   any: {
-    am: /^a/i,
-    pm: /^p/i,
-    midnight: /^gauerdia/i,
-    noon: /^eguerdia/i,
-    morning: /goiz/i,
-    afternoon: /arratsaldea/i,
-    evening: /arratsaldea/i,
+    am: /^a\.m\./i,
+    pm: /^p\.m\./i,
+    midnight: /^gauerd/i,
+    noon: /^eguerd/i,
+    morning: /goizald/i,
+    afternoon: /arrats/i,
+    evening: /iluntz/i,
     night: /gau/i,
   },
 };

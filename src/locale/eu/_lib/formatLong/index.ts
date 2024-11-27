@@ -2,10 +2,10 @@ import type { FormatLong } from "../../../types.js";
 import { buildFormatLongFn } from "../../../_lib/buildFormatLongFn/index.js";
 
 const dateFormats = {
-  full: "EEEE, y'ko' MMMM'ren' d'a' y'ren'",
-  long: "y'ko' MMMM'ren' d'a'",
+  full: "EEEE, y'eko' MMMM'ren' d'a'",
+  long: "y'eko' MMMM'ren' d'a'",
   medium: "y MMM d",
-  short: "yy/MM/dd",
+  short: "y-MM-dd",
 };
 
 const timeFormats = {
@@ -16,8 +16,8 @@ const timeFormats = {
 };
 
 const dateTimeFormats = {
-  full: "{{date}} 'tan' {{time}}",
-  long: "{{date}} 'tan' {{time}}",
+  full: "{{date}} {{time}}'ean'",
+  long: "{{date}} {{time}}'ean'",
   medium: "{{date}}, {{time}}",
   short: "{{date}}, {{time}}",
 };
