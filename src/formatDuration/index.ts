@@ -14,6 +14,8 @@ export interface FormatDurationOptions
   zero?: boolean;
   /** The delimiter string to use */
   delimiter?: string;
+  /** The maximum amount of units to show */
+  maxUnits?: number;
 }
 
 const defaultFormat: DurationUnit[] = [
@@ -83,6 +85,24 @@ const defaultFormat: DurationUnit[] = [
  * // Customize the delimiter
  * formatDuration({ years: 2, months: 9, weeks: 3 }, { delimiter: ', ' })
  * //=> '2 years, 9 months, 3 weeks'
+ *
+ * @example
+ * // Restrict the maximum amount of units to show
+ * formatDuration(
+ *   {
+ *     years: 2,
+ *     months: 9,
+ *     weeks: 1,
+ *     days: 7,
+ *     hours: 5,
+ *     minutes: 9,
+ *     seconds: 30
+ *   },
+ *   { maxUnits: 2 }
+ * )
+ * //=> '2 years 9 months'
+ * formatDuration({ months: 9 }, { maxUnits: 2 })
+ * //=> '9 months'
  */
 export function formatDuration(
   duration: Duration,
@@ -93,6 +113,7 @@ export function formatDuration(
   const format = options?.format ?? defaultFormat;
   const zero = options?.zero ?? false;
   const delimiter = options?.delimiter ?? " ";
+  const maxUnits = options?.maxUnits ?? format.length;
 
   if (!locale.formatDistance) {
     return "";
@@ -100,6 +121,7 @@ export function formatDuration(
 
   const result = format
     .reduce((acc, unit) => {
+      if (acc.length >= maxUnits) return acc;
       const token = `x${unit.replace(/(^.)/, (m) =>
         m.toUpperCase(),
       )}` as FormatDistanceToken;
