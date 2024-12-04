@@ -39,6 +39,7 @@ export * from "./fr/index.js";
 export * from "./fr-CA/index.js";
 export * from "./fr-CH/index.js";
 export * from "./fy/index.js";
+export * from "./ga/index.js";
 export * from "./gd/index.js";
 export * from "./gl/index.js";
 export * from "./gu/index.js";
