@@ -65,6 +65,20 @@ describe("formatISO", () => {
     );
   });
 
+  it("optionally omits timezone offset", () => {
+    const date = new Date(2019, 2 /* Mar */, 3, 19, 0, 52, 123);
+    const tzOffset = generateOffset(date);
+
+    expect(
+      formatISO(date, { representation: "time", format: "extended", includeOffset: false }),
+    ).not.toContain(tzOffset);
+    expect(formatISO(date, { representation: "time", format: "basic", includeOffset: false })).not.toContain(tzOffset);
+    expect(
+      formatISO(date, { representation: "complete", format: "extended", includeOffset: false }),
+    ).not.toContain(tzOffset);
+    expect(formatISO(date, { representation: "complete", format: "basic", includeOffset: false })).not.toContain(tzOffset);
+  });
+
   it("throws RangeError if the time value is invalid", () => {
     expect(formatISO.bind(null, new Date(NaN))).toThrow(RangeError);
   });

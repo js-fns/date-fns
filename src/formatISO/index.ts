@@ -7,7 +7,13 @@ import type { ContextOptions, DateArg, ISOFormatOptions } from "../types.js";
  */
 export interface FormatISOOptions
   extends ISOFormatOptions,
-    ContextOptions<Date> {}
+    ContextOptions<Date> {
+      /**
+       * Whether to include the time zone offset in the formatted string.
+       * @default true
+       */
+      includeOffset?: boolean
+    }
 
 /**
  * @name formatISO
@@ -43,6 +49,11 @@ export interface FormatISOOptions
  * // Represent 18 September 2019 in ISO 8601 format, time only (local time zone is UTC):
  * const result = formatISO(new Date(2019, 8, 18, 19, 0, 52), { representation: 'time' })
  * //=> '19:00:52Z'
+ *
+ * @example
+ * // Represent 18 September 2019 in ISO 8601 format, timezone omitted (local time zone is UTC):
+ * const result = formatISO(new Date(2019, 8, 18, 19, 0, 52), { includeOffset: false })
+ * //=> '2019-09-18T19:00:52'
  */
 export function formatISO(
   date: DateArg<Date> & {},
@@ -56,6 +67,7 @@ export function formatISO(
 
   const format = options?.format ?? "extended";
   const representation = options?.representation ?? "complete";
+  const includeOffset = options?.includeOffset ?? true;
 
   let result = "";
   let tzOffset = "";
@@ -78,16 +90,18 @@ export function formatISO(
     // Add the timezone.
     const offset = date_.getTimezoneOffset();
 
-    if (offset !== 0) {
-      const absoluteOffset = Math.abs(offset);
-      const hourOffset = addLeadingZeros(Math.trunc(absoluteOffset / 60), 2);
-      const minuteOffset = addLeadingZeros(absoluteOffset % 60, 2);
-      // If less than 0, the sign is +, because it is ahead of time.
-      const sign = offset < 0 ? "+" : "-";
-
-      tzOffset = `${sign}${hourOffset}:${minuteOffset}`;
-    } else {
-      tzOffset = "Z";
+    if (includeOffset === true) {
+      if (offset !== 0) {
+        const absoluteOffset = Math.abs(offset);
+        const hourOffset = addLeadingZeros(Math.trunc(absoluteOffset / 60), 2);
+        const minuteOffset = addLeadingZeros(absoluteOffset % 60, 2);
+        // If less than 0, the sign is +, because it is ahead of time.
+        const sign = offset < 0 ? "+" : "-";
+  
+        tzOffset = `${sign}${hourOffset}:${minuteOffset}`;
+      } else {
+        tzOffset = "Z";
+      }
     }
 
     const hour = addLeadingZeros(date_.getHours(), 2);
