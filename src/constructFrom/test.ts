@@ -103,5 +103,10 @@ describe("constructFrom", () => {
       expect(+constructFrom(undefined, NaN)).toBe(NaN);
       expect(+constructFrom(tz("Asia/Singapore"), NaN)).toBe(NaN);
     });
+
+    it("returns invalid date for null value instead of 1970", () => {
+      // @ts-expect-error - We want to pass null here
+      expect(+constructFrom(null, null)).toBe(NaN);
+    });
   });
 });

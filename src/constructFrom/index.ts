@@ -48,6 +48,9 @@ export function constructFrom<
   date: DateArg<DateType> | ContextFn<ResultDate> | undefined,
   value: DateArg<Date> & {},
 ): ResultDate {
+  if (value === null)
+    return new Date(NaN) as ResultDate;
+
   if (typeof date === "function") return date(value);
 
   if (date && typeof date === "object" && constructFromSymbol in date)
