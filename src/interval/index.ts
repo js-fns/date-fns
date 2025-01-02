@@ -6,7 +6,7 @@ import type { ContextOptions, DateArg, NormalizedInterval } from "../types.js";
  */
 export interface IntervalOptions<ContextDate extends Date = Date>
   extends ContextOptions<ContextDate> {
-  /** Asserts that the interval is positive (start is after the end). */
+  /** Asserts that the interval is positive (end is after the start). */
   assertPositive?: boolean;
 }
 
